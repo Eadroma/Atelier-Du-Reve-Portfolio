@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Modak&display=swap");
+
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, #f8e1ff 0%, #e8d5ff 50%, #f0e6ff 100%);
+
+  .portfolio-title {
+    font-size: clamp(3rem, 11vw, 8rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-align: center;
+    line-height: 0.8;
+    text-transform: uppercase;
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
+    font-family: "Modak", sans-serif;
+    position: relative;
+    padding: 2rem 3rem;
+    color: #f472b6;
+    z-index: 2;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2rem;
+      left: -3rem;
+      right: -3rem;
+      bottom: -2rem;
+      background-image: url("/tache.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1;
+      transform: scale(1.5);
+      filter: brightness(0) saturate(100%) invert(85%) sepia(44%) saturate(446%)
+        hue-rotate(72deg) brightness(97%) contrast(89%);
+    }
+
+    .left-title {
+      display: block;
+      text-shadow: 4px 4px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000,
+        -1px 1px 0px #000, 1px 1px 0px #000, 6px 6px 0px #2d5016;
+      -webkit-text-stroke: 3px #000;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .middle-title {
+      display: block;
+      margin: 3rem;
+      text-shadow: 4px 4px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000,
+        -1px 1px 0px #000, 1px 1px 0px #000, 6px 6px 0px #7c2d5e;
+      -webkit-text-stroke: 3px #000;
+      font-size: clamp(3rem, 11vw, 5rem) !important;
+    }
+
+    .right-title {
+      display: block;
+      text-shadow: 4px 4px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000,
+        -1px 1px 0px #000, 1px 1px 0px #000, 6px 6px 0px #7c2d5e;
+      -webkit-text-stroke: 3px #000;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      position: relative;
+    }
+  }
+
+  .portfolio-name {
+    position: absolute;
+    top: 20px;
+    margin: auto;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #f472b6;
+    -webkit-text-stroke: 1px #000;
+    font-family: "Modak", sans-serif;
+
+    span {
+      font-weight: 800;
+      color: #90ee90;
+      margin-left: 0.5rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .horizontal-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: clamp(3rem, 11vw, 7rem);
+    background-color: #f472b6; // Lighter green than #90ee90
+    z-index: 1;
+    width: 100%;
+  }
+}
