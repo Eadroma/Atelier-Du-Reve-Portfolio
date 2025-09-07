@@ -4,7 +4,6 @@
   min-height: 100vh;
   height: 100vh;
   background: linear-gradient(135deg, #fef3e2 0%, #fce4ec 50%, #f3e5f5 100%);
-  padding: 2rem;
   font-family: "Arial", sans-serif;
 
   // Back to top button (scoped to about page only)
@@ -56,13 +55,12 @@
 
 // Header section
 .about-header {
-  margin-bottom: 2rem;
-
   .about-main-title {
     font-weight: bold;
     font-size: 1.8rem;
     color: #2d2d2d;
     margin-bottom: 1rem;
+    margin-top: 2rem;
     letter-spacing: 2px;
     text-align: center;
     font-family: "Modak", sans-serif;
@@ -322,6 +320,39 @@
 }
 
 // Responsive design
+// Medium screens - reduce gap in about-left
+@media (max-width: 1024px) {
+  .about-left {
+    gap: 1rem;
+  }
+
+  .what-i-do-section {
+    .section-title {
+      margin-bottom: 1.5rem;
+
+      span:last-child {
+        font-size: 1rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+
+    .description-text {
+      font-size: 0.85rem;
+      line-height: 1.5;
+
+      p {
+        margin-bottom: 1.2rem;
+      }
+
+      ul li {
+        margin-bottom: 0.4rem;
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .about-container {
     height: 100vh; // Forcer la hauteur d'écran sur mobile
@@ -360,27 +391,55 @@
     overflow-y: auto; // Scroll si nécessaire
   }
 
+  .about-left {
+    gap: 0;
+  }
+
   .about-right {
     order: -1;
+  }
+
+  // Hide profile image completely on small screens
+  .profile-container {
+    display: none;
+  }
+
+  // Center the contact button without profile image
+  .contact-button-container {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
   }
 
   // Ajustements pour les sections de texte
   .what-i-do-section {
     .section-title {
-      margin-bottom: 1rem; // Espace minimal
+      margin-bottom: 0.8rem; // Espace encore plus minimal
 
       span:last-child {
-        font-size: 0.9rem; // Taille compacte
-        padding: 0.2rem 0.6rem; // Padding minimal
+        font-size: 0.8rem; // Taille encore plus compacte
+        padding: 0.2rem 0.5rem; // Padding encore plus minimal
       }
     }
 
     .description-text {
-      font-size: 0.8rem; // Texte compact
-      line-height: 1.4; // Interligne serré
+      font-size: 0.75rem; // Texte encore plus compact
+      line-height: 1.3; // Interligne encore plus serré
 
       p {
-        margin-bottom: 0.8rem; // Espacement minimal
+        margin-bottom: 0.6rem; // Espacement encore plus minimal
+      }
+
+      ul {
+        margin-bottom: 1rem;
+
+        li {
+          margin-bottom: 0.3rem;
+          font-size: 0.75rem;
+          line-height: 1.3;
+        }
       }
     }
   }
@@ -396,22 +455,25 @@
     }
   }
 
-  .profile-frame .profile-photo .profile-image {
-    width: 140px; // Plus gros sur mobile aussi
-    height: 170px;
-  }
-
   .skills-grid {
     grid-template-columns: 1fr !important;
     gap: 0.8rem; // Gap réduit
 
     .skill-button {
-      padding: 0.5rem; // Padding très réduit
-      font-size: 0.75rem; // Texte compact
+      padding: 0.5rem !important; // Padding très réduit
+      font-size: 0.75rem !important; // Texte compact
+      width: 100% !important; // Ensure all buttons have full width
+      grid-column: unset !important; // Reset grid column
+      justify-self: stretch !important; // Stretch to full width
     }
 
+    // Reset the third button to be same as others on mobile
     .skill-button:nth-child(3) {
-      max-width: 100%;
+      grid-column: unset !important;
+      justify-self: stretch !important;
+      width: 100% !important;
+      max-width: none !important;
+      padding: 0.5rem !important;
     }
   }
 
