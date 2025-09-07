@@ -4,7 +4,7 @@
   min-height: 100vh;
   height: 100vh;
   background: #f5f5f5;
-  padding: 2rem;
+  padding: 0;
   font-family: "Arial", sans-serif;
 
   // Back to top button (scoped to about page only)
@@ -131,6 +131,10 @@
         font-weight: bold;
         color: #2d2d2d;
       }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
     }
 
     ul {
@@ -303,25 +307,91 @@
 // Responsive design
 @media (max-width: 768px) {
   .about-container {
-    padding: 1rem;
+    height: 100vh; // Forcer la hauteur d'écran sur mobile
+    max-height: 100vh; // Empêcher le débordement
+    padding: 1rem; // Padding uniforme sur tous les côtés
+    overflow-y: auto; // Permettre le scroll interne si nécessaire
+    box-sizing: border-box; // Inclure le padding dans la hauteur
+  }
+
+  .about-layout {
+    padding: 0; // Retire le padding supplémentaire
+    max-width: none; // Supprime la contrainte de largeur
+    height: 100%; // Prend toute la hauteur disponible
+    display: flex; // S'assurer que flexbox est actif
+    flex-direction: column; // Direction colonne
+    overflow: hidden; // Empêcher le débordement
+  }
+
+  .about-header {
+    margin-bottom: 1rem; // Espace minimal
+    flex-shrink: 0; // Ne pas rétrécir
+
+    .about-main-title {
+      font-size: 1.1rem; // Titre compact
+    }
+
+    .header-line {
+      margin-bottom: 0.5rem; // Ligne plus proche
+    }
   }
 
   .about-main-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem; // Gap minimal
+    flex: 1; // Prend l'espace restant
+    overflow-y: auto; // Scroll si nécessaire
   }
 
   .about-right {
     order: -1;
   }
 
+  // Ajustements pour les sections de texte
+  .what-i-do-section {
+    .section-title {
+      margin-bottom: 1rem; // Espace minimal
+
+      span:last-child {
+        font-size: 0.9rem; // Taille compacte
+        padding: 0.2rem 0.6rem; // Padding minimal
+      }
+    }
+
+    .description-text {
+      font-size: 0.8rem; // Texte compact
+      line-height: 1.4; // Interligne serré
+
+      p {
+        margin-bottom: 0.8rem; // Espacement minimal
+      }
+    }
+  }
+
+  .skills-buttons {
+    .skills-label {
+      margin-bottom: 1rem; // Espace minimal
+
+      span:last-child {
+        font-size: 0.9rem; // Taille compacte
+        padding: 0.2rem 0.6rem; // Padding minimal
+      }
+    }
+  }
+
   .profile-frame .profile-photo .photo-placeholder {
-    width: 150px;
-    height: 180px;
+    width: 100px; // Très compact
+    height: 120px;
   }
 
   .skills-grid {
     grid-template-columns: 1fr !important;
+    gap: 0.8rem; // Gap réduit
+
+    .skill-button {
+      padding: 0.5rem; // Padding très réduit
+      font-size: 0.75rem; // Texte compact
+    }
 
     .skill-button:nth-child(3) {
       max-width: 100%;

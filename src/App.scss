@@ -21,3 +21,16 @@ section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
+
+// Responsive: permet aux sections d'être plus hautes sur mobile
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none; // Désactive le scroll snap sur mobile
+  }
+
+  section {
+    height: auto; // Permet aux sections d'être plus hautes si nécessaire
+    min-height: 100vh; // Garde au minimum la hauteur d'écran
+    scroll-snap-align: none; // Désactive l'alignement snap
+  }
+}
