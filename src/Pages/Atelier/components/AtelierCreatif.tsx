@@ -16,10 +16,26 @@ const AtelierCreatif: React.FC = () => {
         <div className="detail-section">
           <h4>🎯 Objectifs</h4>
           <ul>
-            <li>Développer l'expression artistique personnelle</li>
-            <li>Découvrir différentes techniques créatives</li>
-            <li>Renforcer la confiance en soi par l'art</li>
-            <li>Stimuler l'imagination et l'innovation</li>
+            <li>
+              Stimuler l&#8217;imagination à travers l&#8217;expérimentation de
+              techniques artistiques variées.
+            </li>
+            <li>
+              Développer la motricité fine grâce aux activités manuelles et
+              créatives.
+            </li>
+            <li>
+              Favoriser l&#8217;expression personnelle par le dessin, la musique
+              et l&#8217;écriture.
+            </li>
+            <li>
+              Sensibiliser au respect de l&#8217;environnement via le jardinage
+              et le recyclage artistique.
+            </li>
+            <li>
+              Encourager la collaboration et le partage au sein d&#8217;ateliers
+              collectifs et ludiques.
+            </li>
           </ul>
         </div>
 
@@ -46,16 +62,33 @@ const AtelierCreatif: React.FC = () => {
               <h5>Arts Manuels</h5>
               <p>Bricolage créatif, recyclage artistique</p>
             </div>
+            <div className="activity-card">
+              <span className="activity-icon">🪴</span>
+              <h5>Jardinage créatif</h5>
+              <p>
+                Apprendre à planter, cultiver et créer avec la nature (pots
+                décorés, mini-jardins)
+              </p>
+            </div>
+            <div className="activity-card">
+              <span className="activity-icon">📖</span>
+              <h5>Autour du Livre</h5>
+              <p>
+                Lecture animée, écriture créative, illustration et mise en
+                valeur de récits
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="detail-section">
           <h4>👥 Public Concerné</h4>
           <div className="audience-tags">
+            <span className="audience-tag">Enfants 3-5 ans</span>
             <span className="audience-tag">Enfants 6-12 ans</span>
             <span className="audience-tag">Adolescents 13-17 ans</span>
-            <span className="audience-tag">Adultes débutants</span>
-            <span className="audience-tag">Groupes scolaires</span>
+            <span className="audience-tag">Adultes</span>
+            <span className="audience-tag">Groupes</span>
           </div>
         </div>
 
@@ -63,13 +96,16 @@ const AtelierCreatif: React.FC = () => {
           <h4>📅 Modalités</h4>
           <div className="modalities">
             <div className="modality">
-              <strong>Durée :</strong> Sessions de 1h30 à 3h
+              <strong>Durée :</strong> Sessions de 1h à 2h
             </div>
             <div className="modality">
-              <strong>Groupe :</strong> 8 à 15 participants maximum
+              <strong>Groupe :</strong> 8 à 12 participants maximum
             </div>
             <div className="modality">
-              <strong>Lieu :</strong> À domicile, centres sociaux, écoles
+              <strong>Lieu :</strong> Centres Sociaux, ACM, Écoles, EHPAD
+            </div>
+            <div className="modality">
+              <strong>Progression :</strong> 1 à 8 séances
             </div>
             <div className="modality">
               <strong>Matériel :</strong> Fourni et adapté à l'âge

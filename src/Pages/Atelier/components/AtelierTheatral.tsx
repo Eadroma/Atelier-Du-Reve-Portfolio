@@ -16,11 +16,26 @@ const AtelierTheatral: React.FC = () => {
         <div className="detail-section">
           <h4>🎯 Objectifs</h4>
           <ul>
-            <li>Développer l'expression corporelle et vocale</li>
-            <li>Renforcer la confiance en soi</li>
-            <li>Améliorer la communication et l'écoute</li>
-            <li>Stimuler la créativité et l'imagination</li>
-            <li>Favoriser le travail en équipe</li>
+            <li>
+              Stimuler la créativité et l’imagination à travers l’improvisation
+              et la mise en scène.
+            </li>
+            <li>
+              Développer l’expression orale et corporelle pour gagner en
+              confiance et aisance.
+            </li>
+            <li>
+              Favoriser l’écoute, la coopération et le travail d’équipe sur
+              scène.
+            </li>
+            <li>
+              Explorer les émotions et les personnages pour enrichir
+              l’interprétation.
+            </li>
+            <li>
+              Valoriser les participants grâce à une représentation finale
+              partagée avec un public.
+            </li>
           </ul>
         </div>
 
@@ -63,11 +78,11 @@ const AtelierTheatral: React.FC = () => {
         <div className="detail-section">
           <h4>👥 Public Concerné</h4>
           <div className="audience-tags">
-            <span className="audience-tag">Enfants 8-12 ans</span>
-            <span className="audience-tag">Adolescents 13-18 ans</span>
-            <span className="audience-tag">Adultes tous niveaux</span>
-            <span className="audience-tag">Personnes timides</span>
-            <span className="audience-tag">Groupes constitués</span>
+            <span className="audience-tag">Enfants 3-5 ans</span>
+            <span className="audience-tag">Enfants 6-12 ans</span>
+            <span className="audience-tag">Adolescents 13-17 ans</span>
+            <span className="audience-tag">Adultes</span>
+            <span className="audience-tag">Groupes</span>
           </div>
         </div>
 
@@ -75,16 +90,19 @@ const AtelierTheatral: React.FC = () => {
           <h4>📅 Modalités</h4>
           <div className="modalities">
             <div className="modality">
-              <strong>Durée :</strong> Sessions de 2h à 4h
+              <strong>Durée :</strong> Sessions de 1h30 à 3h
             </div>
             <div className="modality">
-              <strong>Groupe :</strong> 6 à 12 participants maximum
+              <strong>Groupe :</strong> 8 à 10 participants maximum
             </div>
             <div className="modality">
-              <strong>Lieu :</strong> Salles polyvalentes, théâtres, écoles
+              <strong>Lieu :</strong> Centres Sociaux, ACM, Écoles, EHPAD
             </div>
             <div className="modality">
-              <strong>Progression :</strong> Stages ou cycles réguliers
+              <strong>Progression :</strong> 2 à 10 séances
+            </div>
+            <div className="modality">
+              <strong>Matériel :</strong> Fourni et adapté à l'âge
             </div>
           </div>
         </div>
