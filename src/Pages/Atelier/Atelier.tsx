@@ -46,8 +46,8 @@ const AtelierPage: React.FC<AtelierPageProps> = ({
 
   const tabs = [
     { id: "creatif", label: "🎨 Atelier Créatif", emoji: "🎨" },
-    { id: "theatrical", label: "✨ Atelier Théâtral", emoji: "✨" },
-    { id: "pedagogique", label: "🌈 Atelier Pédagogique", emoji: "🌈" },
+    { id: "theatrical", label: "🎭 Atelier Théâtral", emoji: "🎭" },
+    { id: "pedagogique", label: "📚 Atelier Pédagogique", emoji: "📚" },
   ] as const;
 
   const renderTabContent = () => {

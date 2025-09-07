@@ -4,7 +4,7 @@ const AtelierTheatral: React.FC = () => {
   return (
     <div className="atelier-sub-page">
       <div className="atelier-hero">
-        <div className="hero-icon">✨</div>
+        <div className="hero-icon">🎭</div>
         <h3 className="hero-title">Atelier Théâtral</h3>
         <p className="hero-subtitle">
           Développez votre expression, votre confiance et votre créativité sur

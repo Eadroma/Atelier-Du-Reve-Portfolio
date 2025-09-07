@@ -4,7 +4,7 @@ const AtelierPedagogique: React.FC = () => {
   return (
     <div className="atelier-sub-page">
       <div className="atelier-hero">
-        <div className="hero-icon">🌈</div>
+        <div className="hero-icon">📚</div>
         <h3 className="hero-title">Atelier Pédagogique</h3>
         <p className="hero-subtitle">
           Accompagnement des jeunes en formation et préparation de dossiers

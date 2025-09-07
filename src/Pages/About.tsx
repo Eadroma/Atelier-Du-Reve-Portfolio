@@ -124,7 +124,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
                   Je m&#8217;appelle Margaux Ruggeri, et j&#8217;ai créé
                   L&#8217;atelier du rêve pour transmettre ma passion et mon
                   expérience à travers des activités culturelles et éducatives.
-                  Forte de 8 ans d&#8217;expérience en animation et en direction
+                  Titulaire d'un BAFA Langue des Signes et d'un BPJEPS LTP et
+                  forte de 8 ans d&#8217;expérience en animation et en direction
                   d&#8217;ACM, je propose des interventions variées pour
                   accompagner enfants, adolescents et adultes.
                 </p>
@@ -170,13 +171,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
                   className="skill-button"
                   onClick={() => onAtelierSelect?.("theatrical")}
                 >
-                  ✨ Atelier Théâtral
+                  🎭 Atelier Théâtral
                 </button>
                 <button
                   className="skill-button"
                   onClick={() => onAtelierSelect?.("pedagogique")}
                 >
-                  🌈 Atelier Pédagogique
+                  📚 Atelier Pédagogique
                 </button>
               </div>
             </div>
@@ -185,26 +186,30 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
           {/* Right side - Profile section */}
           <div className="about-right">
             {/* Decorative elements */}
-            <div className="star-decoration star-top">✦</div>
             <div className="circle-decoration"></div>
 
             {/* Profile photo container */}
             <div className="profile-container">
               <div className="profile-frame">
                 <div className="profile-photo">
-                  <div className="photo-placeholder">
-                    <span>Photo</span>
-                  </div>
+                  <img
+                    src="https://ik.imagekit.io/49xudysie/Atelier%20Du%20R%C3%AAve/IMG_5153.jpg?updatedAt=1757261904727"
+                    alt="Margaux Ruggeri - Atelier du rêve"
+                    className="profile-image"
+                  />
                 </div>
               </div>
             </div>
 
             {/* Contact button */}
-            <button className="contact-link" onClick={openModal}>
-              <span>Me Contacter</span>
-            </button>
+            <div className="contact-button-container">
+              <div className="star-decoration star-top">✦</div>
+              <button className="contact-link" onClick={openModal}>
+                <span>Me Contacter</span>
+              </button>
 
-            <div className="star-decoration star-bottom">✦</div>
+              <div className="star-decoration star-bottom">✦</div>
+            </div>
           </div>
         </div>
 
@@ -268,9 +273,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
                 <select id="subject" name="subject" required>
                   <option value="">Sélectionnez un sujet</option>
                   <option value="atelier-creatif">🎨 Atelier Créatif</option>
-                  <option value="atelier-theatre">✨ Atelier Théâtral</option>
+                  <option value="atelier-theatre">🎭 Atelier Théâtral</option>
                   <option value="atelier-pedagogique">
-                    🌈 Atelier Pédagogique
+                    📚 Atelier Pédagogique
                   </option>
                   <option value="autre">Autre demande</option>
                 </select>
