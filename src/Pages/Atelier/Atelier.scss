@@ -110,13 +110,13 @@
     }
 
     &.active {
-      background: linear-gradient(135deg, #f472b6, #ec4899);
-      color: white;
+      background: #90ee90;
+      color: #2d2d2d;
       border-color: #2d2d2d;
       box-shadow: 0 5px 20px rgba(244, 114, 182, 0.3);
 
       .tab-text {
-        color: white;
+        color: #2d2d2d;
       }
 
       &:hover {
