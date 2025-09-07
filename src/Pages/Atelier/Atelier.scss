@@ -2,8 +2,7 @@
 
 .atelier-container {
   min-height: 100vh;
-  height: 100vh;
-  background: linear-gradient(135deg, #fef3e2 0%, #fce4ec 50%, #f3e5f5 100%);
+  background: #f3e5f5;
   padding: 2rem;
   font-family: "Arial", sans-serif;
 
@@ -49,7 +48,6 @@
 .atelier-layout {
   max-width: 1200px;
   margin: 0 auto;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -131,13 +129,12 @@
 
 // Content Area
 .atelier-content {
-  flex: 1;
-  overflow-y: auto;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
 }
 
 // Sub-page content
