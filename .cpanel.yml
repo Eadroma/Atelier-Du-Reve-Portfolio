@@ -1,0 +1,27 @@
+---
+deployment:
+  tasks:
+    # Installation des dépendances Node.js
+    - export DEPLOYPATH=/home/juja0980/public_html/
+    - /bin/cp -R * $DEPLOYPATH
+    - cd $DEPLOYPATH
+
+    # Installer les dépendances
+    - npm install
+
+    # Build de l'application pour la production
+    - npm run build
+
+    # Copier les fichiers build vers le répertoire public
+    - /bin/cp -R dist/* ./
+
+    # Nettoyer les fichiers de développement (optionnel)
+    - rm -rf node_modules
+    - rm -rf src
+    - rm -rf public
+    - rm -rf dist
+    - rm package*.json
+    - rm vite.config.ts
+    - rm tsconfig*.json
+    - rm eslint.config.js
+    - rm README.md
