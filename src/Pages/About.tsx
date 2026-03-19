@@ -1,13 +1,21 @@
 import * as React from "react";
 import emailjs from "@emailjs/browser";
 import type { AtelierTab } from "./Atelier";
+import { useContent } from "../content/useContent";
 import "./About.scss";
 
 interface AboutPageProps {
   onAtelierSelect?: (tab: AtelierTab) => void;
 }
 
+/**
+ * AboutPage — biography, workshop shortcut buttons, profile photo, and contact modal.
+ * All text is loaded from `src/content/content.json` (gitignored).
+ */
 const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
+  const content = useContent();
+  const { owner, about, contact, ateliers } = content;
+
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [showBackToTop, setShowBackToTop] = React.useState(false);
   const [notification, setNotification] = React.useState<{
@@ -16,7 +24,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
     show: boolean;
   }>({ message: "", type: "success", show: false });
 
-  // Observer pour détecter si la section About est visible
+  // Observer to detect when the About section is in view
   React.useEffect(() => {
     const aboutSection = document.getElementById("about");
     if (!aboutSection) return;
@@ -47,13 +55,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
     });
   };
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +64,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    // Récupération des données du formulaire
     const templateParams = {
       to_email: import.meta.env.VITE_FORM_EMAIL,
       from_name: formData.get("name"),
@@ -72,13 +74,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
     };
 
     try {
-      // Configuration EmailJS - vous devrez configurer ces variables d'environnement
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       if (!serviceId || !templateId || !publicKey) {
-        console.error("Configuration EmailJS manquante");
+        console.error("EmailJS configuration manquante");
         showNotification(
           "Configuration email manquante. Veuillez contacter l'administrateur.",
           "error"
@@ -87,137 +88,98 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
       }
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-      showNotification("Message envoyé avec succès !", "success");
+      showNotification(contact.successMessage, "success");
       closeModal();
       form.reset();
     } catch (error) {
       console.error("Erreur lors de l'envoi:", error);
-      showNotification(
-        "Erreur lors de l'envoi du message. Veuillez réessayer.",
-        "error"
-      );
+      showNotification(contact.errorMessage, "error");
     }
   };
 
   return (
     <div className="about-container">
       <div className="about-layout">
-        {/* Header with decorative line */}
+        {/* Header */}
         <div className="about-header">
-          <h2 className="about-main-title">A PROPOS DE MOI</h2>
+          <h2 className="about-main-title">{about.sectionTitle}</h2>
           <div className="header-line"></div>
         </div>
 
-        {/* Main content area */}
+        {/* Main content */}
         <div className="about-main-content">
-          {/* Left side - What I Do */}
+          {/* Left side — Bio */}
           <div className="about-left">
             <div className="what-i-do-section">
               <div className="section-title">
                 <span className="star-icon">✦</span>
-                <span>CE QUE JE FAIS</span>
+                <span>{about.whatIDoTitle}</span>
               </div>
 
               <div className="description-text">
-                <p>
-                  Je m&#8217;appelle Margaux Ruggeri, et j&#8217;ai créé
-                  L&#8217;atelier du rêve pour transmettre ma passion et mon
-                  expérience à travers des activités culturelles et éducatives.
-                  Titulaire d'un BAFA Langue des Signes et d'un BPJEPS LTP et
-                  forte de 8 ans d&#8217;expérience en animation et en direction
-                  d&#8217;ACM, je propose des interventions variées pour
-                  accompagner enfants, adolescents et adultes.
-                </p>
-                <p>Trois grands axes structurent mes ateliers :</p>
+                <p>{about.bio[0]}</p>
+                <p>{about.bio[1]}</p>
                 <ul>
-                  <li>
-                    Ateliers théâtraux, pour développer l&#8217;expression, la
-                    confiance et la créativité.
-                  </li>
-                  <li>
-                    Ateliers créatifs, autour du dessin, de la musique et des
-                    arts visuels.
-                  </li>
-                  <li>
-                    Ateliers pédagogiques, destinés à l&#8217;accompagnement des
-                    jeunes en formation BPJEPS, CPJEPS ou BAFA, ainsi qu&#8217;à
-                    la préparation et l&#8217;évaluation de dossiers.
-                  </li>
+                  {about.bioListItems.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
                 </ul>
-                <p>
-                  Mon ambition est de créer des espaces d&#8217;échanges et
-                  d&#8217;apprentissage où chacun peut grandir, s&#8217;exprimer
-                  et rêver.
-                </p>
+                <p>{about.bio[2]}</p>
               </div>
             </div>
 
-            {/* Skills buttons section */}
+            {/* Workshop shortcut buttons */}
             <div className="skills-buttons">
               <div className="skills-label">
                 <span className="triangle-icon">✦</span>
-                <span>MES ATELIERS</span>
+                <span>{about.workshopsTitle}</span>
               </div>
 
               <div className="skills-grid">
-                <button
-                  className="skill-button"
-                  onClick={() => onAtelierSelect?.("creatif")}
-                >
-                  🎨 Atelier Créatif
-                </button>
-                <button
-                  className="skill-button"
-                  onClick={() => onAtelierSelect?.("theatrical")}
-                >
-                  🎭 Atelier Théâtral
-                </button>
-                <button
-                  className="skill-button"
-                  onClick={() => onAtelierSelect?.("pedagogique")}
-                >
-                  📚 Atelier Pédagogique
-                </button>
+                {ateliers.tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    className="skill-button"
+                    onClick={() => onAtelierSelect?.(tab.id as AtelierTab)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Right side - Profile section */}
+          {/* Right side — Profile photo */}
           <div className="about-right">
-            {/* Decorative elements */}
             <div className="circle-decoration"></div>
 
-            {/* Profile photo container */}
             <div className="profile-container">
               <div className="profile-frame">
                 <div className="profile-photo">
                   <img
-                    src="https://ik.imagekit.io/49xudysie/Atelier%20Du%20R%C3%AAve/IMG_5153.jpg?updatedAt=1757261904727"
-                    alt="Margaux Ruggeri - Atelier du rêve"
+                    src={owner.photoUrl}
+                    alt={owner.photoAlt}
                     className="profile-image"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Contact button */}
             <div className="contact-button-container">
               <div className="star-decoration star-top">✦</div>
               <button className="contact-link" onClick={openModal}>
-                <span>Me Contacter</span>
+                <span>{about.contactButton}</span>
               </button>
-
               <div className="star-decoration star-bottom">✦</div>
             </div>
           </div>
         </div>
 
-        {/* Back to top button - visible seulement quand la section About est visible */}
+        {/* Back to top */}
         {showBackToTop && (
           <div className="back-to-top" onClick={scrollToHome}>
             <div className="back-to-top-arrow">
-              <span>Retour</span>
+              <span>{about.backToTop}</span>
               <div className="arrow-up">↑</div>
             </div>
           </div>
@@ -229,7 +191,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h2>Me Contacter</h2>
+              <h2>{contact.modalTitle}</h2>
               <button className="close-button" onClick={closeModal}>
                 ✕
               </button>
@@ -243,7 +205,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
                   id="name"
                   name="name"
                   required
-                  placeholder="Votre nom complet"
+                  placeholder={contact.namePlaceholder}
                 />
               </div>
 
@@ -254,7 +216,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
                   id="email"
                   name="email"
                   required
-                  placeholder="votre.email@exemple.com"
+                  placeholder={contact.emailPlaceholder}
                 />
               </div>
 
@@ -264,20 +226,19 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="06 12 34 56 78"
+                  placeholder={contact.phonePlaceholder}
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="subject">Sujet *</label>
                 <select id="subject" name="subject" required>
-                  <option value="">Sélectionnez un sujet</option>
-                  <option value="atelier-creatif">🎨 Atelier Créatif</option>
-                  <option value="atelier-theatre">🎭 Atelier Théâtral</option>
-                  <option value="atelier-pedagogique">
-                    📚 Atelier Pédagogique
-                  </option>
-                  <option value="autre">Autre demande</option>
+                  <option value="">{contact.subjectDefault}</option>
+                  {contact.subjects.map((s) => (
+                    <option key={s.value} value={s.value}>
+                      {s.label}
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -288,7 +249,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
                   name="message"
                   rows={5}
                   required
-                  placeholder="Décrivez votre projet ou votre demande..."
+                  placeholder={contact.messagePlaceholder}
                 ></textarea>
               </div>
 
@@ -298,10 +259,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onAtelierSelect }) => {
                   className="cancel-button"
                   onClick={closeModal}
                 >
-                  Annuler
+                  {contact.cancelButton}
                 </button>
                 <button type="submit" className="submit-button">
-                  Envoyer
+                  {contact.sendButton}
                 </button>
               </div>
             </form>

@@ -1,0 +1,155 @@
+
+> atelier_du_reve@0.0.0 test
+> vitest run
+
+
+ RUN  v2.1.9 /home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio
+
+DEPRECATION WARNING [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/legacy-js-api
+
+DEPRECATION WARNING [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/legacy-js-api
+
+DEPRECATION WARNING [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/legacy-js-api
+
+DEPRECATION WARNING [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/legacy-js-api
+
+ ❯ src/App.test.tsx (1 test | 1 failed) 139ms
+   × App Component > renders without crashing and contains main sections 135ms
+     → 
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/App.test.tsx > App Component > renders without crashing and contains main sections
+{
+  stack: 'AggregateError: \n' +
+    '    at aggregateErrors (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react/cjs/react.development.js:527:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react/cjs/react.development.js:873:24)\n' +
+    '    at /home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/act-compat.js:46:25\n' +
+    '    at renderRoot (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/pure.js:189:26)\n' +
+    '    at Proxy.render (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/pure.js:291:10)\n' +
+    '    at /home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/src/App.test.tsx:7:27\n' +
+    '    at file:///home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@vitest/runner/dist/index.js:146:14\n' +
+    '    at file:///home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@vitest/runner/dist/index.js:533:11\n' +
+    '    at runWithTimeout (file:///home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@vitest/runner/dist/index.js:39:7)\n' +
+    '    at runTest (file:///home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@vitest/runner/dist/index.js:1056:17)',
+  errors: [
+    {
+      stack: 'ReferenceError: IntersectionObserver is not defined\n' +
+        '    at /home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/src/Pages/About.tsx:32:22\n' +
+        '    at Object.react_stack_bottom_frame (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:23953:20)\n' +
+        '    at runWithFiberInDEV (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:1522:13)\n' +
+        '    at commitHookEffectListMount (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:11905:29)\n' +
+        '    at commitHookPassiveMountEffects (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:12028:11)\n' +
+        '    at commitPassiveMountOnFiber (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13841:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13815:11)\n' +
+        '    at commitPassiveMountOnFiber (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13957:11)\n' +
+        '    at recursivelyTraversePassiveMountEffects (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13815:11)\n' +
+        '    at commitPassiveMountOnFiber (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13957:11)',
+      message: 'IntersectionObserver is not defined',
+      constructor: 'Function<ReferenceError>',
+      name: 'ReferenceError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'ReferenceError: IntersectionObserver is not defined\n' +
+        '    at /home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/src/Pages/Atelier/Atelier.tsx:28:22\n' +
+        '    at Object.react_stack_bottom_frame (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:23953:20)\n' +
+        '    at runWithFiberInDEV (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:1522:13)\n' +
+        '    at commitHookEffectListMount (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:11905:29)\n' +
+        '    at commitHookPassiveMountEffects (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:12028:11)\n' +
+        '    at commitPassiveMountOnFiber (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13841:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13815:11)\n' +
+        '    at commitPassiveMountOnFiber (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13957:11)\n' +
+        '    at recursivelyTraversePassiveMountEffects (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13815:11)\n' +
+        '    at commitPassiveMountOnFiber (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react-dom/cjs/react-dom-client.development.js:13957:11)',
+      message: 'IntersectionObserver is not defined',
+      constructor: 'Function<ReferenceError>',
+      name: 'ReferenceError',
+      toString: 'Function<toString>'
+    }
+  ],
+  stackStr: 'AggregateError: \n' +
+    '    at aggregateErrors (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react/cjs/react.development.js:527:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react/cjs/react.development.js:873:24)\n' +
+    '    at /home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/act-compat.js:46:25\n' +
+    '    at renderRoot (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/pure.js:189:26)\n' +
+    '    at Proxy.render (/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/pure.js:291:10)\n' +
+    '    at /home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/src/App.test.tsx:7:27\n' +
+    '    at file:///home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@vitest/runner/dist/index.js:146:14\n' +
+    '    at file:///home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@vitest/runner/dist/index.js:533:11\n' +
+    '    at runWithTimeout (file:///home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@vitest/runner/dist/index.js:39:7)\n' +
+    '    at runTest (file:///home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@vitest/runner/dist/index.js:1056:17)',
+  nameStr: 'AggregateError',
+  expected: 'undefined',
+  actual: 'undefined',
+  message: '',
+  constructor: 'Function<AggregateError>',
+  name: 'AggregateError',
+  toString: 'Function<toString>',
+  stacks: [
+    {
+      method: 'aggregateErrors',
+      file: '/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react/cjs/react.development.js',
+      line: 527,
+      column: 11
+    },
+    {
+      method: 'process.env.NODE_ENV.exports.act',
+      file: '/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/react/cjs/react.development.js',
+      line: 873,
+      column: 24
+    },
+    {
+      method: '',
+      file: '/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/act-compat.js',
+      line: 46,
+      column: 25
+    },
+    {
+      method: 'renderRoot',
+      file: '/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 189,
+      column: 26
+    },
+    {
+      method: 'Proxy.render',
+      file: '/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 291,
+      column: 10
+    },
+    {
+      method: '',
+      file: '/home/saif/Personal/Github/public/Atelier-Du-Reve-Portfolio/src/App.test.tsx',
+      line: 7,
+      column: 27
+    }
+  ]
+}
+ ❯ aggregateErrors node_modules/react/cjs/react.development.js:527:11
+ ❯ process.env.NODE_ENV.exports.act node_modules/react/cjs/react.development.js:873:24
+ ❯ node_modules/@testing-library/react/dist/act-compat.js:46:25
+ ❯ renderRoot node_modules/@testing-library/react/dist/pure.js:189:26
+ ❯ Proxy.render node_modules/@testing-library/react/dist/pure.js:291:10
+ ❯ src/App.test.tsx:7:27
+      5| describe('App Component', () => {
+      6|   it('renders without crashing and contains main sections', () => {
+      7|     const { container } = render(<App />);
+       |                           ^
+      8|     expect(container.querySelector('#home')).toBeInTheDocument();
+      9|     expect(container.querySelector('#about')).toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  17:59:45
+   Duration  3.56s (transform 978ms, setup 147ms, collect 1.23s, tests 139ms, environment 944ms, prepare 195ms)
+

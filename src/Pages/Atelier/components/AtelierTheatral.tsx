@@ -1,109 +1,62 @@
 import * as React from "react";
+import { useContent } from "../../../content/useContent";
 
+/**
+ * AtelierTheatral — theatrical workshop detail page.
+ * All text content is loaded from `src/content/content.json` (gitignored).
+ */
 const AtelierTheatral: React.FC = () => {
+  const { ateliers } = useContent();
+  const atelier = ateliers.theatrical;
+
   return (
     <div className="atelier-sub-page">
       <div className="atelier-hero">
-        <div className="hero-icon">🎭</div>
-        <h3 className="hero-title">Atelier Théâtral</h3>
-        <p className="hero-subtitle">
-          Développez votre expression, votre confiance et votre créativité sur
-          scène
-        </p>
+        <div className="hero-icon">{atelier.icon}</div>
+        <h3 className="hero-title">{atelier.title}</h3>
+        <p className="hero-subtitle">{atelier.subtitle}</p>
       </div>
 
       <div className="atelier-details">
         <div className="detail-section">
-          <h4>🎯 Objectifs</h4>
+          <h4>{atelier.objectivesTitle}</h4>
           <ul>
-            <li>
-              Stimuler la créativité et l’imagination à travers l’improvisation
-              et la mise en scène.
-            </li>
-            <li>
-              Développer l’expression orale et corporelle pour gagner en
-              confiance et aisance.
-            </li>
-            <li>
-              Favoriser l’écoute, la coopération et le travail d’équipe sur
-              scène.
-            </li>
-            <li>
-              Explorer les émotions et les personnages pour enrichir
-              l’interprétation.
-            </li>
-            <li>
-              Valoriser les participants grâce à une représentation finale
-              partagée avec un public.
-            </li>
+            {atelier.objectives.map((obj, i) => (
+              <li key={i}>{obj}</li>
+            ))}
           </ul>
         </div>
 
         <div className="detail-section">
-          <h4>🎭 Activités Proposées</h4>
+          <h4>{atelier.activitiesTitle}</h4>
           <div className="activities-grid">
-            <div className="activity-card">
-              <span className="activity-icon">🎪</span>
-              <h5>Improvisation</h5>
-              <p>Jeux d'improvisation, spontanéité, réactivité</p>
-            </div>
-            <div className="activity-card">
-              <span className="activity-icon">📖</span>
-              <h5>Interprétation</h5>
-              <p>Travail sur textes, personnages, émotions</p>
-            </div>
-            <div className="activity-card">
-              <span className="activity-icon">🤸</span>
-              <h5>Expression Corporelle</h5>
-              <p>Gestuelle, mime, danse-théâtre</p>
-            </div>
-            <div className="activity-card">
-              <span className="activity-icon">🎤</span>
-              <h5>Technique Vocale</h5>
-              <p>Diction, projection, intonation</p>
-            </div>
-            <div className="activity-card">
-              <span className="activity-icon">🎨</span>
-              <h5>Mise en Scène</h5>
-              <p>Création collective, scénographie</p>
-            </div>
-            <div className="activity-card">
-              <span className="activity-icon">🎬</span>
-              <h5>Spectacle</h5>
-              <p>Représentation finale, valorisation</p>
-            </div>
+            {atelier.activities.map((act, i) => (
+              <div className="activity-card" key={i}>
+                <span className="activity-icon">{act.icon}</span>
+                <h5>{act.title}</h5>
+                <p>{act.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="detail-section">
-          <h4>👥 Public Concerné</h4>
+          <h4>{atelier.audienceTitle}</h4>
           <div className="audience-tags">
-            <span className="audience-tag">Enfants 3-5 ans</span>
-            <span className="audience-tag">Enfants 6-12 ans</span>
-            <span className="audience-tag">Adolescents 13-17 ans</span>
-            <span className="audience-tag">Adultes</span>
-            <span className="audience-tag">Groupes</span>
+            {atelier.audience.map((tag, i) => (
+              <span className="audience-tag" key={i}>{tag}</span>
+            ))}
           </div>
         </div>
 
         <div className="detail-section">
-          <h4>📅 Modalités</h4>
+          <h4>{atelier.modalitiesTitle}</h4>
           <div className="modalities">
-            <div className="modality">
-              <strong>Durée :</strong> Sessions de 1h30 à 3h
-            </div>
-            <div className="modality">
-              <strong>Groupe :</strong> 8 à 10 participants maximum
-            </div>
-            <div className="modality">
-              <strong>Lieu :</strong> Centres Sociaux, ACM, Écoles, EHPAD
-            </div>
-            <div className="modality">
-              <strong>Progression :</strong> 2 à 10 séances
-            </div>
-            <div className="modality">
-              <strong>Matériel :</strong> Fourni et adapté à l'âge
-            </div>
+            {atelier.modalities.map((mod, i) => (
+              <div className="modality" key={i}>
+                <strong>{mod.label} :</strong> {mod.value}
+              </div>
+            ))}
           </div>
         </div>
       </div>

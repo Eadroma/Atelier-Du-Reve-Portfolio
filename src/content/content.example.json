@@ -1,0 +1,122 @@
+{
+  "owner": {
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "photoUrl": "https://example.com/photo.jpg",
+    "photoAlt": "Prénom Nom - Atelier du rêve"
+  },
+  "home": {
+    "discover": "Découvrir"
+  },
+  "about": {
+    "sectionTitle": "A PROPOS DE MOI",
+    "whatIDoTitle": "CE QUE JE FAIS",
+    "workshopsTitle": "MES ATELIERS",
+    "contactButton": "Me Contacter",
+    "backToTop": "Retour",
+    "bio": [
+      "Paragraphe de présentation 1 : décrivez votre parcours et votre projet.",
+      "Paragraphe d'introduction pour la liste d'axes :",
+      "Paragraphe de conclusion / ambition."
+    ],
+    "bioListItems": [
+      "Premier axe de vos activités.",
+      "Deuxième axe de vos activités.",
+      "Troisième axe de vos activités."
+    ]
+  },
+  "contact": {
+    "modalTitle": "Me Contacter",
+    "namePlaceholder": "Votre nom complet",
+    "emailPlaceholder": "votre.email@exemple.com",
+    "phonePlaceholder": "06 12 34 56 78",
+    "subjectDefault": "Sélectionnez un sujet",
+    "messagePlaceholder": "Décrivez votre projet ou votre demande...",
+    "cancelButton": "Annuler",
+    "sendButton": "Envoyer",
+    "successMessage": "Message envoyé avec succès !",
+    "errorMessage": "Erreur lors de l'envoi du message. Veuillez réessayer.",
+    "subjects": [
+      { "value": "atelier-1", "label": "🎨 Nom de l'atelier 1" },
+      { "value": "atelier-2", "label": "🎭 Nom de l'atelier 2" },
+      { "value": "atelier-3", "label": "📚 Nom de l'atelier 3" },
+      { "value": "autre", "label": "Autre demande" }
+    ]
+  },
+  "ateliers": {
+    "sectionTitle": "MES ATELIERS",
+    "backToAbout": "Retour",
+    "tabs": [
+      { "id": "creatif", "label": "🎨 Atelier 1", "emoji": "🎨" },
+      { "id": "theatrical", "label": "🎭 Atelier 2", "emoji": "🎭" },
+      { "id": "pedagogique", "label": "📚 Atelier 3", "emoji": "📚" }
+    ],
+    "creatif": {
+      "icon": "🎨",
+      "title": "Nom de l'atelier 1",
+      "subtitle": "Description courte de l'atelier 1",
+      "objectivesTitle": "🎯 Objectifs",
+      "objectives": ["Objectif 1", "Objectif 2", "Objectif 3"],
+      "activitiesTitle": "🛠️ Activités Proposées",
+      "activities": [
+        { "icon": "🖌️", "title": "Activité 1", "description": "Description de l'activité" },
+        { "icon": "🎵", "title": "Activité 2", "description": "Description de l'activité" },
+        { "icon": "🖼️", "title": "Activité 3", "description": "Description de l'activité" }
+      ],
+      "audienceTitle": "👥 Public Concerné",
+      "audience": ["Tranche d'âge 1", "Tranche d'âge 2", "Adultes"],
+      "modalitiesTitle": "📅 Modalités",
+      "modalities": [
+        { "label": "Durée", "value": "Sessions de Xh à Yh" },
+        { "label": "Groupe", "value": "X à Y participants maximum" },
+        { "label": "Lieu", "value": "Lieu(x) d'intervention" },
+        { "label": "Progression", "value": "X à Y séances" },
+        { "label": "Matériel", "value": "Description du matériel" }
+      ]
+    },
+    "theatrical": {
+      "icon": "🎭",
+      "title": "Nom de l'atelier 2",
+      "subtitle": "Description courte de l'atelier 2",
+      "objectivesTitle": "🎯 Objectifs",
+      "objectives": ["Objectif 1", "Objectif 2", "Objectif 3"],
+      "activitiesTitle": "🎭 Activités Proposées",
+      "activities": [
+        { "icon": "🎪", "title": "Activité 1", "description": "Description de l'activité" },
+        { "icon": "📖", "title": "Activité 2", "description": "Description de l'activité" }
+      ],
+      "audienceTitle": "👥 Public Concerné",
+      "audience": ["Tranche d'âge 1", "Adultes", "Groupes"],
+      "modalitiesTitle": "📅 Modalités",
+      "modalities": [
+        { "label": "Durée", "value": "Sessions de Xh à Yh" },
+        { "label": "Groupe", "value": "X à Y participants maximum" },
+        { "label": "Lieu", "value": "Lieu(x) d'intervention" },
+        { "label": "Progression", "value": "X à Y séances" },
+        { "label": "Matériel", "value": "Description du matériel" }
+      ]
+    },
+    "pedagogique": {
+      "icon": "📚",
+      "title": "Nom de l'atelier 3",
+      "subtitle": "Description courte de l'atelier 3",
+      "objectivesTitle": "🎯 Objectifs",
+      "objectives": ["Objectif 1", "Objectif 2", "Objectif 3"],
+      "activitiesTitle": "📚 Formations / Thèmes",
+      "activities": [
+        { "icon": "🎓", "title": "Formation 1", "description": "Description de la formation" },
+        { "icon": "📋", "title": "Formation 2", "description": "Description de la formation" }
+      ],
+      "audienceTitle": "👥 Public Concerné",
+      "audience": ["Public 1", "Public 2", "Professionnels"],
+      "modalitiesTitle": "📅 Modalités",
+      "modalities": [
+        { "label": "Durée", "value": "Sessions de Xh à Yh" },
+        { "label": "Groupe", "value": "X à Y participants maximum" },
+        { "label": "Lieu", "value": "Lieu(x) d'intervention" },
+        { "label": "Progression", "value": "Ponctuelle ou sur la durée" },
+        { "label": "Matériel", "value": "Description du matériel" }
+      ]
+    }
+  }
+}

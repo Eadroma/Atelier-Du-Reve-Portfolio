@@ -17,10 +17,20 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
+# Environment variables — keep .env.example committed
 .env
+.env.*
+!.env.example
+
+# Test coverage reports
+coverage
+
+# Private site content — copy content.example.json → content.json and fill in your data
+src/content/content.json
